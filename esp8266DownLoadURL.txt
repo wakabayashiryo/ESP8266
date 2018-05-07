@@ -1,0 +1,11 @@
+arduino IDEにライブラリを追加する方法
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+上記のURLをIDEの環境設定>>追加するボードマネージャのURLに入力する。
+
+モード									GPIO15	GPIO2	GPIO0
+書き込みモード(UART Download Mode)	Low	High	Low
+実行モード(Flash Boot Mode)			Low	High	High
+SDブートモード(SD-Card Boot Mode)		High	Low	Low
+
+書き込みの方法
+PIO0をLOWにしながらリセットする。
