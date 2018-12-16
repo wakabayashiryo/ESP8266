@@ -55,13 +55,31 @@
 - ## NOTE
     - ### truble shooting
         https://www.mgo-tec.com/blog-entry-esp8266-wroom-02-espr-developer-trouble-shooting.html
+
     - ### Online setting of SSID and password 
         http://takehikoshimojima.tumblr.com/post/138820924644/esp8266-wi-fi-ssid%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%81%AE%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E8%A8%AD%E5%AE%9A
+
     - ### more information about ESP8266
         https://macsbug.wordpress.com/2015/06/21/information-of-esp8266-%E9%9A%8F%E6%99%82%E8%BF%BD%E5%8A%A0/
+
     - ### ESP8266 kanji(Japaneses) library SPIFFS version
         https://github.com/Tamakichi/ESP8266-KanjiFont-Library-SPIFFS
 
+    - ### Triggering webhook of IFTTT 
+        https://qiita.com/umi_kappa/items/89991cbf9832b629b419 
+
+    - ### Kind of sleep modes 
+        https://maro525.github.io/notebook/esp_sleep_mode.html  
+
+ 
+
+Ambient(IoTプラットフォーム 
+
+1. Download Arduino library that is compressed ZIP from [gihub](https://github.com/AmbientDataInc/Ambient_ESP8266_lib) 
+
+2. Import library into Arduino IDE 
+
+3. show exsample code and type your program
 
 - ## Version
 
