@@ -23,7 +23,7 @@
     1. Open Serial Monitor.If you did not setup AP setting, will be displayed message of "Configuring access point...".    
     Check access point and connect to input password.
         ![](./img/WiFiManager1.png)
-    1. Access http://192.168.82.66(Accessd by FireFox)
+    1. Access http://192.168.82.66 (Accessed by FireFox)
         ![](./img/browser1.png)
     1. Click "Configure WiFi"   
         Input SSID and password of AP that ESP8266 connect to it  
