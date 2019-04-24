@@ -30,9 +30,6 @@
 #define _OTA_PASSWORD         "password"
 #define _OTA_PORT             8266
 
-#define _MANAGER_RST_SETTING  _DISABLE  // If the pin assined is low when power on, previous manager setting will be cleard 
-#define _MANAGER_RST_PIN      2         // Recommend to set PULLUP
-
 #define _OTA_INDICATE_LED     _DISABLE  // Two LEDs will be light when LOW 
 #define _OTA_STATUS_PIN       16        // The LED flashes during OTA operation
 #define _OTA_ERROR_PIN        13        // When Error ocoued, the LED turns on. Check Serial message
@@ -44,14 +41,7 @@ void setup(void)
   // WiFiManager
   // Local intialization. Once its business is done, there is no need to keep it around
   WiFiManager wifiManager;
-  
-#if _MANAGER_RST_SETTING
-  pinMode(_MANAGER_RST_PIN,INPUT_PULLUP);
-  delay(100);
-  if(digitalRead(_MANAGER_RST_PIN) == LOW);
-    wifiManager.resetSettings();
-#endif
-  
+    
   // the specified IP configuration instead of using DHCP in station mode.
   wifiManager.setAPStaticIPConfig(_MANAGER_IP, _MANAGER_GATEWAY, _MANAGER_SUBNET);
   wifiManager.setConfigPortalTimeout(_MANAGER_TIMEOUT);    

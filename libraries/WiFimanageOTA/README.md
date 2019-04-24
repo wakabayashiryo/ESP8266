@@ -19,7 +19,9 @@
         |_OTA_PASSWORD|string|"password"||
         |_OTA_PORT|int|8266||
     1. Write user program    
-    1. Upload executable file via UART 
+    1. Upload executable file via UART   
+        **If erase WiFi setting, select "Tool >> Erase Flash >> Sketch + WiFi Settings" before compiling.**
+
     1. Open Serial Monitor.If you did not setup AP setting, will be displayed message of "Configuring access point...".    
     Check access point and connect to input password.
         ![](./img/WiFiManager1.png)
@@ -38,7 +40,10 @@
         ![](./img/OTAdisplay.png)
         After complete to upload,ESP8266 makes to restart program.
 
-        **NOTE:WiFi Configuration will be saved at EEPROM, setupping WiFi configuration will be unnecessary again**
+        - **NOTE**
+            1. **WiFi Configuration will be saved at EEPROM, setupping WiFi configuration will be unnecessary again**
+            1. **When Writing Flash memory into ESP01S via UART, Must setup 1MB of Flash size**
+            1. **And when OTA uploading, boot mode musy make to be UART mode**   
 
 - ## Default Specifications
     
@@ -56,15 +61,6 @@
     |OTA UDP port number|8266|
 
 - ## Option parameter
-    - ### Reset button for WiFi manager setting   
-        If you need to reset WiFi manager setting, Change parameter of "MANAGER_RST_SETTING" from "_DISABLE" to "_ENABLE".
-        If the pin assined is low when power on, previous manager setting will be cleard.
-
-        |contents|explanation|default|    
-        |:--|:--|:--:|    
-        |MANAGER_RST_SETTING|When "_ENABLE" ,will be enable |_DISABLE|
-        |_MANAGER_RST_PIN|Power on while this pin make low,will be reset manager setting (active Low)|2|
-
     - ### OTA indicator   
         If you need to indicate OTA state using LED, Change parameter of "_OTA_INDICATE_LED" from "_DISABLE" to "_ENABLE".
 
@@ -92,5 +88,8 @@
         [基本的なOTAアップデートの使い方](https://garretlab.web.fc2.com/arduino/esp32/examples/ArduinoOTA/ArduinoOTA_BasicOTA.html)   
         [ESP8266 ARDUINO、WI-FI経由のプログラムアップロード OTA](http://takehikoshimojima.tumblr.com/post/139096221524/esp8266-arduinowi-fi%E7%B5%8C%E7%94%B1%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89-ota)
 
+    - ESP01S    
+        [Product Page](https://www.aliexpress.com/item/Upgraded-version-ESP-01-ESP8266-serial-WIFI-wireless-module-wireless-transceiver-ESP01-ESP8266-01/32900849637.html?spm=2114.search0604.3.10.5c8f4d958XsOxC&ws_ab_test=searchweb0_0,searchweb201602_8_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_51,ppcSwitch_0&algo_expid=3667d7de-6234-4751-a219-ff55d4140acc-1&algo_pvid=3667d7de-6234-4751-a219-ff55d4140acc)   
+        [Definitive Guide to Setting Up Your New ESP01 Module](https://www.instructables.com/id/Definitive-Guide-to-Setting-Up-Your-New-ESP01-Modu/)
     - other   
         [ESP32 WifiManagerで自動接続できなかった場合の対処法](https://kunsen.net/2018/06/09/post-359/)  
