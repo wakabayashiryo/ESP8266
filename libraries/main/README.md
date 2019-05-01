@@ -4,25 +4,26 @@
     Easily connect to Access Point and Upload arduino program via UDP to ESP8266 using WiFiManager library by tzapu and ArduinoOTA standard library
 
 - ## How to Use?
-    1. Copy [sample program](./WiFimanageOTA.ino) in other file, Write own program to it.
+    1. Install library of *WiFiManager* by tzapu 
+    1. Copy [sample program](./wirelessConfig.ino) in other file, Write own program to it.
     1. Set up parameters of macro defined.Show parameter table.    
     
-        |parameter|type|default|remark|    
-        |:--|:--:|:--|:--:|    
-        |_MANAGER_SSID|string|"esp8266"| |
-        |_MANAGER_PSK|string|"password"||
-        |_MANAGER_TIMEOUT|int|120||
-        |_MANAGER_IP|ip|IPAddress(192,168,82,66)||
-        |_MANAGER_GATEWAY|ip|IPAddress(192,168,82,1)||
-        |_MANAGER_SUBNET|ip|IPAddress(255,255,255,0)||
-        |_OTA_HOSTNAME|string|"esp8266"||
-        |_OTA_PASSWORD|string|"password"||
-        |_OTA_PORT|int|8266||
+        |parameter|type|default|    
+        |:--|:--:|:--|   
+        |_MANAGER_SSID|string|"esp8266"| 
+        |_MANAGER_PSK|string|"password"|
+        |_MANAGER_TIMEOUT|int|120|
+        |_MANAGER_IP|ip|IPAddress(192,168,82,66)|
+        |_MANAGER_GATEWAY|ip|IPAddress(192,168,82,1)|
+        |_MANAGER_SUBNET|ip|IPAddress(255,255,255,0)|
+        |_OTA_HOSTNAME|string|"esp8266"|
+        |_OTA_PASSWORD|string|"password"|
+        |_OTA_PORT|int|8266|
     1. Write user program    
     1. Upload executable file via UART   
         **If erase WiFi setting, select "Tool >> Erase Flash >> Sketch + WiFi Settings" before compiling.**
 
-    1. Open Serial Monitor.If you did not setup AP setting, will be displayed message of "Configuring access point...".    
+    1. Open Serial Monitor.If you did not connect Access point, will be displayed message of "Configuring access point...".    
     Check access point and connect to input password.
         ![](./img/WiFiManager1.png)
     1. Access http://192.168.82.66 (Accessed by FireFox)
@@ -42,7 +43,7 @@
 
         - **NOTE**
             1. **WiFi Configuration will be saved at EEPROM, setupping WiFi configuration will be unnecessary again**
-            1. **When Writing Flash memory into ESP01S via UART, Must setup 1MB of Flash size**
+            1. **When Writing Flash memory into ESP-01S via UART, Must setup 1MB of Flash size**
             1. **And when OTA uploading, boot mode musy make to be UART mode**   
 
 - ## Default Specifications
@@ -62,13 +63,18 @@
 
 - ## Option parameter
     - ### OTA indicator   
-        If you need to indicate OTA state using LED, Change parameter of "_OTA_INDICATE_LED" from "_DISABLE" to "_ENABLE".
+        The LED for indicating operation   
 
-        |contents|explanation|default|    
-        |:--|:--|:--:|    
-        |_OTA_INDICATE_LED|indicate OTA upload|_DISABLE|
-        |_OTA_STATUS_PIN|The LED flashes during OTA operation|16|
-        |_OTA_ERROR_PIN|hen Error ocoued, the LED turns on. Check Serial message|13|
+        ~~~c
+        #define _WC_STATUS_PIN      16
+        ~~~
+        
+        |action|mean |    
+        |:--|:--|    
+        |Turn on | connecting with AP|
+        |Flush   | OTA uploading|
+        |Turn off| ocoured error or disconnected|
+
         - ## NOTE    
             **Two LEDs will be light when LOW** 
 

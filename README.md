@@ -57,7 +57,7 @@
         https://www.mgo-tec.com/blog-entry-esp8266-wroom-02-espr-developer-trouble-shooting.html
 
     - ### Easily setup WiFi & OTA upload   
-        [WiFi Manager & Arduino OTA for ESP8266](./libraries/WiFimanageOTA/)
+        [WiFi Manager & Arduino OTA for ESP8266](./libraries/main/)
 
     - ### more information about ESP8266
         https://macsbug.wordpress.com/2015/06/21/information-of-esp8266-%E9%9A%8F%E6%99%82%E8%BF%BD%E5%8A%A0/
