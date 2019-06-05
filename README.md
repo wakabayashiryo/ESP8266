@@ -47,6 +47,15 @@
 - ## Hardware difinition as Arduino(japanese)
     - [use ESP8266 as arduino](https://keijirotanabe.github.io/blog/2017/02/08/esp8266-how-to-170208/)   
 
+- ## Official site and documents
+    - Official site
+        https://www.espressif.com/en/products/hardware/esp8266ex/overview
+    - Documents
+        https://www.espressif.com/en/products/hardware/esp8266ex/resources    
+
+- ## Easily setup WiFi & OTA upload   
+    [WiFi Manager & Arduino OTA for ESP8266](./libraries/main/)
+
 - ## Free RTOS for ESP8266
     ***Currently development envirment for ESP8266 is not supported RTOS***   
     > https://github.com/esp8266/Arduino/issues/2118   
@@ -55,9 +64,6 @@
 - ## NOTE
     - ### truble shooting
         https://www.mgo-tec.com/blog-entry-esp8266-wroom-02-espr-developer-trouble-shooting.html
-
-    - ### Easily setup WiFi & OTA upload   
-        [WiFi Manager & Arduino OTA for ESP8266](./libraries/main/)
 
     - ### more information about ESP8266
         https://macsbug.wordpress.com/2015/06/21/information-of-esp8266-%E9%9A%8F%E6%99%82%E8%BF%BD%E5%8A%A0/
@@ -72,22 +78,13 @@
         https://maro525.github.io/notebook/esp_sleep_mode.html  
 
  
-
-Ambient(IoTプラットフォーム 
-
-1. Download Arduino library that is compressed ZIP from [gihub](https://github.com/AmbientDataInc/Ambient_ESP8266_lib) 
-
-2. Import library into Arduino IDE 
-
-3. show exsample code and type your program
-
 - ## Version
 
     |version  |Date|Contents|
     |:-----:|:-------:|:----------------|
     |ver1.0 |2018/12/15|add infomation of version|   
     |ver1.1 |2018/12/16|add infomation of version|   
-
+    |ver1.2 |2019/6/5|delete explains of ambient <br> delete local document to online its changed|   
 
 - ## License Information
    This software is released under the MIT License, see LICENSE
